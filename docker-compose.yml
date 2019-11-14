@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  iot-client:
+    build: .
+    image: joecoolish/iot-client
+    networks: 
+      iot-client-network:    
+    ports:
+      - 3000:3000
+      - "9229:9229"
+    command:
+      - node
+      - "--inspect=0.0.0.0"
+      - "server.js"
+    environment:
+      - CONNECTION_STRING=HostName=PimpHub.azure-devices.net;DeviceId=TestNodeDevice;SharedAccessKey=DfeNL7PsJAj4qGK3DWwTwrVo0mdtYtHg7Lr12j/q5bA= 
+
+networks:
+  iot-client-network:
+    # Use a custom driver
+    driver: bridge

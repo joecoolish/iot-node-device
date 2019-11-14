@@ -1,0 +1,14 @@
+*/node_modules
+*/dist
+
+.git
+.gitlab-ci.yml
+.dockerignore
+dist
+Dockerfile
+docker-compose.yml
+debug-compose.yml
+docs
+test
+
+node_modules
